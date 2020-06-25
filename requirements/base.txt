@@ -1,0 +1,17 @@
+# Django
+Django==2.2.12
+django-environ==0.4.5
+django-extensions==2.2.9
+
+# Databse
+psycopg2==2.8.5
+
+# Gunicorn
+gunicorn==20.0.4
+
+# Utilities
+celery[sqs]==4.4.5
+boto3==1.14.8
+
+# Static files
+whitenoise==5.1.0

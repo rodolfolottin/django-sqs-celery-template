@@ -1,0 +1,50 @@
+version: "3"
+services:
+  web:
+    build: .
+    volumes:
+      - .:/usr/src/app
+    ports:
+      - 8000:8000
+    environment:
+      ENV: development
+    depends_on:
+      - db
+      - sqs
+
+  worker:
+    build: .
+    volumes:
+      - .:/usr/src/app
+    command: bash -c "cd src/ && celery -A app worker --loglevel=debug"
+    depends_on:
+      - web
+      - sqs
+
+  beat:
+    build: .
+    volumes:
+      - .:/usr/src/app
+    command: bash -c "cd src/ && celery -A app beat --loglevel=debug" 
+    depends_on:
+      - web 
+      - sqs 
+
+  db:
+    image: postgres:12
+    ports:
+      - 5432:5432
+    volumes:
+      - ./docker/db/pgdata:/var/lib/postgresql/data
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: app
+
+  sqs:
+    image: roribio16/alpine-sqs
+    ports:
+      - 9324:9324
+      - 9325:9325
+    volumes:
+      - ./config/elasticmq.conf:/opt/config/elasticmq.conf
