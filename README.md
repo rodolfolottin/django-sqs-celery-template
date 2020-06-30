@@ -1,4 +1,4 @@
-# django-sqs-celery-blogpost
+# django-sqs-celery-template
 
 This repository is a simple django application to serve as an example for a blog post that aims to 
 
