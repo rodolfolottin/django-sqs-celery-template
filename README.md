@@ -1,6 +1,6 @@
 # django-sqs-celery-template
 
-This repository is a simple django application to serve as an example for a blog post that aims to 
+An effortlessly pre configured Django, Celery and SQS template repository for those who want to process asynchronous background tasks.
 
 ## Getting started
 
