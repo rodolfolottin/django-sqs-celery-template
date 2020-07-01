@@ -137,3 +137,4 @@ STATIC_ROOT = os.path.join(os.path.dirname(BASE_DIR), "static")
 STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 
 BROKER_URL = env("BROKER_URL")
+SQS_REGION = env("SQS_REGION")
