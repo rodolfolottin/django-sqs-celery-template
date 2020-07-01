@@ -13,6 +13,8 @@ Before running this app we will need:
 
 ### Running locally (docker-compose)
 
+Inside the cloned repository folder:
+
 1. Copy the .env.example
 
 ```
@@ -25,3 +27,5 @@ cp .env.example .env
 ```
 docker-compose up
 ```
+
+That's it! After building and running the app your should have 5 container services available on your machine. Now you can start developing your application and your async background tasks!
