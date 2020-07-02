@@ -138,4 +138,3 @@ STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 
 BROKER_URL = env("BROKER_URL")
 SQS_REGION = env("SQS_REGION")
-
