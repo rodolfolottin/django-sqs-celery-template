@@ -24,7 +24,7 @@ CELERY_CONFIG.update(
         "BROKER_URL": settings.BROKER_URL,
         "BROKER_TRANSPORT": "sqs",
         "BROKER_TRANSPORT_OPTIONS": {
-            "region": "us-west-2",
+            "region": settings.SQS_REGION,
             "visibility_timeout": 3600,
             "polling_interval": 60,
         },
