@@ -10,7 +10,7 @@ psycopg2==2.8.5
 gunicorn==20.0.4
 
 # Utilities
-celery[sqs]==4.4.5
+celery[sqs]==4.4.6
 boto3==1.14.8
 
 # Static files
