@@ -32,4 +32,4 @@ RUN mkdir -p /usr/src/app/src/static/
 
 EXPOSE 8000
 
-ENTRYPOINT ["sh", "docker-entrypoint.sh"]
+CMD ["sh", "docker-entrypoint.sh"]
