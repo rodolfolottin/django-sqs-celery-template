@@ -1,4 +1,4 @@
-FROM python:3.6
+FROM python:3.10-slim-buster
 
 # Install base dependencies
 RUN apt-get update && apt-get install -y -q --no-install-recommends \
@@ -11,6 +11,8 @@ RUN apt-get update && apt-get install -y -q --no-install-recommends \
         git \
         libproj-dev \
         libssl-dev \
+        libpq-dev \
+        libcurl4-openssl-dev \
         wget \
     && rm -rf /var/lib/apt/lists/*
 
